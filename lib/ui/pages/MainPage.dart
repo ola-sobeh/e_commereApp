@@ -1,9 +1,7 @@
 import 'package:e_commere/Providers/MainProvider.dart';
-import 'package:e_commere/Providers/ThemeProvider.dart';
 import 'package:e_commere/ui/pages/CartPage.dart';
 import 'package:e_commere/ui/pages/FavoritePage.dart';
 import 'package:e_commere/ui/pages/HomePage.dart';
-import 'package:e_commere/ui/pages/MapPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +14,7 @@ class MainPage extends StatelessWidget {
       home: Scaffold(
         body: PageView(
           controller: Provider.of<MainProvider>(context).pageController,
-          children: [HomePage(), FavoritePage(), CartPage(), MapPage()],
+          children: [HomePage(), FavoritePage(), CartPage()],
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: Provider.of<MainProvider>(context).currentPageIndex,
@@ -45,13 +43,6 @@ class MainPage extends StatelessWidget {
                   color: Colors.pink[200],
                 ),
                 icon: Icon(Icons.shopping_cart_outlined, color: Colors.pink[200]),
-                label: ""),
-            BottomNavigationBarItem(
-                activeIcon: Icon(
-                  Icons.map,
-                  color: Colors.pink[200],
-                ),
-                icon: Icon(Icons.map_outlined, color: Colors.pink[200]),
                 label: ""),
           ],
         ),
