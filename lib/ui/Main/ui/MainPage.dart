@@ -1,7 +1,7 @@
-import 'package:e_commere/Providers/MainProvider.dart';
-import 'package:e_commere/ui/pages/CartPage.dart';
-import 'package:e_commere/ui/pages/FavoritePage.dart';
-import 'package:e_commere/ui/pages/HomePage.dart';
+import 'package:e_commere/ui/Main/provider/MainProvider.dart';
+import 'package:e_commere/ui/cart/ui/CartPage.dart';
+import 'package:e_commere/ui/Favorite/ui/FavoritePage.dart';
+import 'package:e_commere/ui/Home/ui/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

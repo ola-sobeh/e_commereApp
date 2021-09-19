@@ -1,5 +1,5 @@
-import 'package:e_commere/Providers/HomeProvider.dart';
-import 'package:e_commere/ui/widgets/CartWidget.dart';
+import 'package:e_commere/ui/cart/provider/CartProvider.dart';
+import 'package:e_commere/ui/cart/ui/CartWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +13,7 @@ class CartPage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
-      body: Consumer<HomeProvider>(
+      body: Consumer<CartProvider>(
         builder: (context, provider, x) {
           if (provider.allCartProducts == null) {
             return Center(

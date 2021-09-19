@@ -1,9 +1,6 @@
-import 'package:e_commere/Providers/HomeProvider.dart';
-import 'package:e_commere/ui/widgets/ProductWidget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:e_commere/ui/Favorite/provider/FavoriteProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'ProductDetails.dart';
 
 class FavoritePage extends StatelessWidget {
   @override
@@ -11,11 +8,13 @@ class FavoritePage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.grey[300],
         appBar: AppBar(
-          title: Text('Favourite Page', style: TextStyle(color:Colors.grey[800]),
+          title: Text(
+            'Favourite Page',
+            style: TextStyle(color: Colors.grey[800]),
           ),
           backgroundColor: Colors.white,
         ),
-        body: Consumer<HomeProvider>(
+        body: Consumer<FavoriteProvider>(
           builder: (context, provider, x) {
             if (provider.allFavoiratProducts == null) {
               return Center(

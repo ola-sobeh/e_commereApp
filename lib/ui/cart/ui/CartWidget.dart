@@ -1,12 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commere/Providers/HomeProvider.dart';
-import 'package:e_commere/model/AllProductsResponse.dart';
+import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
+import 'package:e_commere/ui/cart/provider/CartProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CartWidget extends StatelessWidget {
   AllProductsResponse product;
+
   CartWidget(this.product);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,8 +34,8 @@ class CartWidget extends StatelessWidget {
           ),
           IconButton(
               onPressed: () {
-                Provider.of<HomeProvider>(context, listen: false)
-                    .deleteProductInCart(product.id,context);
+                Provider.of<CartProvider>(context, listen: false)
+                    .deleteProductInCart(product.id, context);
               },
               icon: Icon(
                 Icons.delete,

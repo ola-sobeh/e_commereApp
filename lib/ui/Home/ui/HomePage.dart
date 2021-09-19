@@ -1,15 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:e_commere/Providers/HomeProvider.dart';
-import 'package:e_commere/helper/apiHelper.dart';
-import 'package:e_commere/model/AllProductsResponse.dart';
-import 'package:e_commere/ui/widgets/CategoryWidget.dart';
-import 'package:e_commere/ui/widgets/ProductWidget.dart';
+import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
+import 'package:e_commere/ui/Home/provider/HomeProvider.dart';
+import 'package:e_commere/ui/product/provider/ProductProvider.dart';
+import 'package:e_commere/ui/Home/ui/widget/CategoryWidget.dart';
+import 'package:e_commere/ui/product/ui/ProductWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'ProductDetails.dart';
+import '../../product/ui/ProductDetails.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -98,7 +97,7 @@ class HomePage extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                   onTap: () {
-                                    Provider.of<HomeProvider>(context,
+                                    Provider.of<ProductProvider>(context,
                                             listen: false)
                                         .getProductResponse(products[index].id);
                                     Navigator.of(context).push(
