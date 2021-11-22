@@ -1,4 +1,4 @@
-import 'package:e_commere/ui/Favorite/provider/FavoriteProvider.dart';
+import 'package:e_commere/view_models/favorite_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +14,7 @@ class FavoritePage extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
         ),
-        body: Consumer<FavoriteProvider>(
+        body: Consumer<FavoriteViewModel>(
           builder: (context, provider, x) {
             if (provider.allFavoiratProducts == null) {
               return Center(

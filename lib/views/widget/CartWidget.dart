@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
-import 'package:e_commere/ui/cart/provider/CartProvider.dart';
+import 'package:e_commere/model/AllProductsResponse.dart';
+import 'package:e_commere/view_models/cart_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +34,7 @@ class CartWidget extends StatelessWidget {
           ),
           IconButton(
               onPressed: () {
-                Provider.of<CartProvider>(context, listen: false)
+                Provider.of<CartViewModel>(context, listen: false)
                     .deleteProductInCart(product.id, context);
               },
               icon: Icon(

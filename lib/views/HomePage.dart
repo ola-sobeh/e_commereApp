@@ -1,14 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
-import 'package:e_commere/ui/Home/provider/HomeProvider.dart';
-import 'package:e_commere/ui/product/provider/ProductProvider.dart';
-import 'package:e_commere/ui/Home/ui/widget/CategoryWidget.dart';
-import 'package:e_commere/ui/product/ui/ProductWidget.dart';
+import 'package:e_commere/model/AllProductsResponse.dart';
+import 'package:e_commere/view_models/home_view_model.dart';
+import 'package:e_commere/view_models/product_view_model.dart';
+import 'package:e_commere/views/widget/ProductWidget.dart';
+import 'package:e_commere/views/widget/CategoryWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../product/ui/ProductDetails.dart';
+import 'ProductDetails.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
-      body: Consumer<HomeProvider>(
+      body: Consumer<HomeViewModel>(
         builder: (context, provider, x) {
           List<AllProductsResponse> allProducts = provider.allProducts;
           List<AllProductsResponse> products = provider.categoryProducts;
@@ -97,7 +97,7 @@ class HomePage extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                   onTap: () {
-                                    Provider.of<ProductProvider>(context,
+                                    Provider.of<ProductViewModel>(context,
                                             listen: false)
                                         .getProductResponse(products[index].id);
                                     Navigator.of(context).push(

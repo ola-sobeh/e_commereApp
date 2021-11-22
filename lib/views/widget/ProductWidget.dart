@@ -1,13 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commere/ui/Favorite/provider/FavoriteProvider.dart';
-import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
-import 'package:e_commere/ui/cart/provider/CartProvider.dart';
+import 'package:e_commere/view_models/favorite_view_model.dart';
+import 'package:e_commere/model/AllProductsResponse.dart';
+import 'package:e_commere/view_models/cart_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProductWidget extends StatelessWidget {
   AllProductsResponse product;
-
   ProductWidget(this.product);
 
   @override
@@ -52,7 +51,7 @@ class ProductWidget extends StatelessWidget {
               IconButton(
                 padding: EdgeInsets.fromLTRB(0, 20, 30, 0),
                 onPressed: () {
-                  Provider.of<FavoriteProvider>(context, listen: false)
+                  Provider.of<FavoriteViewModel>(context, listen: false)
                       .insertProductInFavourite(product);
                 },
                 icon: Icon(
@@ -64,7 +63,7 @@ class ProductWidget extends StatelessWidget {
               IconButton(
                 padding: EdgeInsets.fromLTRB(0, 20, 30, 0),
                 onPressed: () {
-                  Provider.of<CartProvider>(context, listen: false)
+                  Provider.of<CartViewModel>(context, listen: false)
                       .insertProductInCart(product);
                 },
                 icon: Icon(

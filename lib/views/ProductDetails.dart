@@ -1,4 +1,4 @@
-import 'package:e_commere/ui/product/provider/ProductProvider.dart';
+import 'package:e_commere/view_models/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -6,7 +6,7 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Consumer<ProductProvider>(
+      body: Consumer<ProductViewModel>(
         builder: (context, provider, x) {
           return provider.product == null
               ? Center(

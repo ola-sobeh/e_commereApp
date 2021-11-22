@@ -1,8 +1,8 @@
-import 'package:e_commere/helper/SqfliteHelper.dart';
-import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
+import 'package:e_commere/services/sqflite_service.dart';
+import 'package:e_commere/model/AllProductsResponse.dart';
 import 'package:flutter/material.dart';
 
-class FavoriteProvider extends ChangeNotifier{
+class FavoriteViewModel extends ChangeNotifier{
 
   List<AllProductsResponse> allFavoiratProducts;
 

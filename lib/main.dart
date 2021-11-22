@@ -1,30 +1,30 @@
-import 'package:e_commere/ui/Favorite/provider/FavoriteProvider.dart';
-import 'package:e_commere/ui/Home/provider/HomeProvider.dart';
-import 'package:e_commere/ui/cart/provider/CartProvider.dart';
-import 'package:e_commere/ui/Main/ui/MainPage.dart';
-import 'package:e_commere/helper/SqfliteHelper.dart';
-import 'package:e_commere/ui/product/provider/ProductProvider.dart';
+import 'package:e_commere/view_models/favorite_view_model.dart';
+import 'package:e_commere/view_models/home_view_model.dart';
+import 'package:e_commere/view_models/cart_view_model.dart';
+import 'package:e_commere/views/MainPage.dart';
+import 'package:e_commere/services/sqflite_service.dart';
+import 'package:e_commere/view_models/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'ui/Main/provider/MainProvider.dart';
+import 'view_models/main_view_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DbHelper.dbHelper.initDatabase();
   runApp(
     MultiProvider(providers: [
-      ChangeNotifierProvider<MainProvider>(
-        create: (context) => MainProvider(),
+      ChangeNotifierProvider<MainViewModel>(
+        create: (context) => MainViewModel(),
       ),
-      ChangeNotifierProvider<HomeProvider>(
-        create: (context) => HomeProvider(),
+      ChangeNotifierProvider<HomeViewModel>(
+        create: (context) => HomeViewModel(),
       ),
-      ChangeNotifierProvider<ProductProvider>(
-          create: (context) => ProductProvider()),
-      ChangeNotifierProvider<FavoriteProvider>(
-          create: (context) => FavoriteProvider()),
-      ChangeNotifierProvider<CartProvider>(
-          create: (context) => CartProvider())
+      ChangeNotifierProvider<ProductViewModel>(
+          create: (context) => ProductViewModel()),
+      ChangeNotifierProvider<FavoriteViewModel>(
+          create: (context) => FavoriteViewModel()),
+      ChangeNotifierProvider<CartViewModel>(
+          create: (context) => CartViewModel())
     ],
         child: MaterialApp(
             debugShowCheckedModeBanner: false,

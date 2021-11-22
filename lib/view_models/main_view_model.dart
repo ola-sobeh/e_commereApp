@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class MainProvider extends ChangeNotifier {
+class MainViewModel extends ChangeNotifier {
   int currentPageIndex = 0;
   PageController pageController = PageController();
 

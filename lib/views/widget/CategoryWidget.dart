@@ -1,4 +1,4 @@
-import 'package:e_commere/ui/Home/provider/HomeProvider.dart';
+import 'package:e_commere/view_models/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,7 @@ class CategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Provider.of<HomeProvider>(context, listen: false).selectCategory(title);
+        Provider.of<HomeViewModel>(context, listen: false).selectCategory(title);
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
@@ -21,7 +21,7 @@ class CategoryWidget extends StatelessWidget {
           style: TextStyle(color: Colors.grey[800], fontSize: 18),
         ),
         decoration: BoxDecoration(
-            color: Provider.of<HomeProvider>(context).selectedCategory == title
+            color: Provider.of<HomeViewModel>(context).selectedCategory == title
                 ? Colors.pink[300]
                 : Colors.white70,
             borderRadius: BorderRadius.circular(15)),

@@ -1,9 +1,9 @@
 
-import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
-import 'package:e_commere/helper/SqfliteHelper.dart';
-import 'package:e_commere/ui/Home/ui/widget/CustomDialoug.dart';
+import 'package:e_commere/model/AllProductsResponse.dart';
+import 'package:e_commere/services/sqflite_service.dart';
+import 'package:e_commere/views/widget/CustomDialoug.dart';
 import 'package:flutter/material.dart';
-class CartProvider extends ChangeNotifier {
+class CartViewModel extends ChangeNotifier {
   List<AllProductsResponse> allCartProducts;
 
   insertProductInCart(AllProductsResponse allProductsResponse) async {

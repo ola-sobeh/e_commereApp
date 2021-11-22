@@ -1,8 +1,8 @@
-import 'package:e_commere/ui/Home/model/AllProductsResponse.dart';
-import 'package:e_commere/ui/Home/data/HomeApiHelper.dart';
+import 'package:e_commere/model/AllProductsResponse.dart';
+import 'package:e_commere/services/Api_Service.dart';
 import 'package:flutter/material.dart';
 
-class HomeProvider extends ChangeNotifier {
+class HomeViewModel extends ChangeNotifier {
   List<AllProductsResponse> categoryProducts;
   String selectedCategory;
   List<AllProductsResponse> allProducts;
@@ -10,18 +10,18 @@ class HomeProvider extends ChangeNotifier {
   int currentPageIndex = 0;
   PageController pageController = PageController();
 
-  HomeProvider() {
+  HomeViewModel() {
     getAllProducts();
     getAllCategories();
   }
 
   getAllProducts() async {
-    allProducts = await HomeApiHelper.apiHelper.getAllProducts();
+    allProducts = await ApiService.apiHelper.getAllProducts();
     notifyListeners();
   }
 
   getAllCategories() async {
-    allCategories = await HomeApiHelper.apiHelper.getAllCategory();
+    allCategories = await ApiService.apiHelper.getAllCategory();
     notifyListeners();
   }
   selectCategory(String categoryName) {
@@ -32,7 +32,7 @@ class HomeProvider extends ChangeNotifier {
   }
 
   getAllProductsInCategory() async {
-    categoryProducts = await HomeApiHelper.apiHelper
+    categoryProducts = await ApiService.apiHelper
         .getAllProductsInCategory(selectedCategory);
     notifyListeners();
   }

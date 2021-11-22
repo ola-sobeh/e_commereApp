@@ -1,7 +1,7 @@
-import 'package:e_commere/ui/Main/provider/MainProvider.dart';
-import 'package:e_commere/ui/cart/ui/CartPage.dart';
-import 'package:e_commere/ui/Favorite/ui/FavoritePage.dart';
-import 'package:e_commere/ui/Home/ui/HomePage.dart';
+import 'package:e_commere/view_models/main_view_model.dart';
+import 'package:e_commere/views/CartPage.dart';
+import 'package:e_commere/views/FavoritePage.dart';
+import 'package:e_commere/views/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,13 +13,13 @@ class MainPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: PageView(
-          controller: Provider.of<MainProvider>(context).pageController,
+          controller: Provider.of<MainViewModel>(context).pageController,
           children: [HomePage(), FavoritePage(), CartPage()],
         ),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: Provider.of<MainProvider>(context).currentPageIndex,
+          currentIndex: Provider.of<MainViewModel>(context).currentPageIndex,
           onTap: (x) {
-            Provider.of<MainProvider>(context, listen: false).changePageIndex(x);
+            Provider.of<MainViewModel>(context, listen: false).changePageIndex(x);
           },
           items: [
             BottomNavigationBarItem(
